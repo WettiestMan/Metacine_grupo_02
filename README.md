@@ -1,1 +1,1 @@
-"# Metacine (grupo 02)" 
+# Metacine (grupo 02) 
