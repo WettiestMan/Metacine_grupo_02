@@ -31,20 +31,25 @@ public class Cine {
     @JoinColumn(name = "idAdmin", referencedColumnName = "idAdmin")
     private Administrador admin;
 
+    @OneToOne(mappedBy = "cine")
+    private Dulceria dulceria;
+
     public Cine() {
         id = null;
         nombre = null;
         direccion = null;
         telefono = null;
         admin = null;
+        dulceria = null;
     }
 
-    public Cine(Long id, String nombre, String direccion, String telefono, Administrador admin) {
+    public Cine(Long id, String nombre, String direccion, String telefono, Administrador admin, Dulceria dulceria) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.admin = admin;
+        this.dulceria = dulceria;
     }
 
     public Long getId() {
@@ -67,6 +72,10 @@ public class Cine {
         return telefono;
     }
 
+    public Dulceria getDulceria() {
+        return dulceria;
+    }
+
     public void setAdmin(Administrador admin) {
         this.admin = admin;
     }
@@ -85,5 +94,9 @@ public class Cine {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public void setDulceria(Dulceria dulceria) {
+        this.dulceria = dulceria;
     }
 }

@@ -1,5 +1,7 @@
 package com.grupo02.web.models;
 
+import java.time.LocalDate;
+
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -16,18 +18,15 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "producto")
-public class Producto {
+@Table(name = "promocion")
+public class Promocion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idProducto")
+    @Column(name = "idPromocion")
     private Long id;
 
     @Column(name = "nombre")
     private String nombre;
-
-    @Column(name = "precio")
-    private Double precio;
 
     @Column(name = "descripcion")
     private String descripcion;
@@ -35,72 +34,80 @@ public class Producto {
     @Column(name = "stock")
     private Integer stock;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idTipoProd", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private TipoProducto tipoProd;  // esto debería ser de tipo TipoProducto, pero no tengo el modelo ahorita
+    @Column(name = "fechaInicio")
+    private LocalDate fechaInicio;
+
+    @Column(name = "fechaFin")
+    private LocalDate fechaFin;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idDuleria", nullable = false)
+    @JoinColumn(name = "idCine", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private Dulceria dulceria;  // ... cambiar a tipo Dulcería cuando el modelo esté hecho
+    private Cine cine;
 
-    public Producto() {
+    public Promocion() {
         id = null;
         nombre = null;
-        precio = null;
         descripcion = null;
         stock = null;
-        tipoProd = null;
-        dulceria = null;
+        fechaInicio = null;
+        fechaFin = null;
+        cine = null;
     }
 
-    public Producto(Long id, String nombre, Double precio, String descripcion, Integer stock, TipoProducto tipoProd, Dulceria dulceria) {
+    public Promocion(Long id, String nombre, String descripcion, Integer stock, LocalDate fechaInicio, LocalDate fechaFin, Cine cine) {
         this.id = id;
         this.nombre = nombre;
-        this.precio = precio;
         this.descripcion = descripcion;
         this.stock = stock;
-        this.tipoProd = tipoProd;
-        this.dulceria = dulceria;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.cine = cine;
+    }
+
+    public Cine getCine() {
+        return cine;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public Object getDulceria() {
-        return dulceria;
+    public LocalDate getFechaFin() {
+        return fechaFin;
+    }
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
     }
 
     public Long getId() {
         return id;
     }
-    
+
     public String getNombre() {
         return nombre;
-    }
-
-    public Double getPrecio() {
-        return precio;
     }
 
     public Integer getStock() {
         return stock;
     }
 
-    public TipoProducto getTipoProd() {
-        return tipoProd;
+    public void setCine(Cine cine) {
+        this.cine = cine;
     }
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public void setDulceria(Dulceria dulceria) {
-        this.dulceria = dulceria;
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
     public void setId(Long id) {
@@ -111,15 +118,7 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
-    }
-
     public void setStock(Integer stock) {
         this.stock = stock;
-    }
-
-    public void setTipoProd(TipoProducto tipoProd) {
-        this.tipoProd = tipoProd;
     }
 }
