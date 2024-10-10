@@ -71,7 +71,7 @@ public class Producto implements Serializable{
         return descripcion;
     }
 
-    public Object getDulceria() {
+    public Dulceria getDulceria() {
         return dulceria;
     }
 
