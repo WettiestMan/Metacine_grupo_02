@@ -1,5 +1,7 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "cine")
-public class Cine {
+public class Cine implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idCine")
@@ -32,6 +34,7 @@ public class Cine {
     private Administrador admin;
 
     @OneToOne(mappedBy = "cine")
+    @JoinColumn(name = "idDuleria", referencedColumnName = "idDuleria")
     private Dulceria dulceria;
 
     public Cine() {
@@ -43,13 +46,11 @@ public class Cine {
         dulceria = null;
     }
 
-    public Cine(Long id, String nombre, String direccion, String telefono, Administrador admin, Dulceria dulceria) {
+    public Cine(Long id, String nombre, String direccion, String telefono) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-        this.admin = admin;
-        this.dulceria = dulceria;
     }
 
     public Long getId() {

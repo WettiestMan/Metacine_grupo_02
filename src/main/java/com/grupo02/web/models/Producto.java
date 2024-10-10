@@ -1,5 +1,7 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
+
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -17,7 +19,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "producto")
-public class Producto {
+public class Producto implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idProducto")
@@ -57,14 +59,12 @@ public class Producto {
         dulceria = null;
     }
 
-    public Producto(Long id, String nombre, Double precio, String descripcion, Integer stock, TipoProducto tipoProd, Dulceria dulceria) {
+    public Producto(Long id, String nombre, Double precio, String descripcion, Integer stock) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion;
         this.stock = stock;
-        this.tipoProd = tipoProd;
-        this.dulceria = dulceria;
     }
 
     public String getDescripcion() {

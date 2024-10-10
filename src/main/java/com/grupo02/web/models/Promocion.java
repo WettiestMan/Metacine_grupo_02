@@ -1,5 +1,6 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import org.hibernate.annotations.OnDelete;
@@ -19,7 +20,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "promocion")
-public class Promocion {
+public class Promocion implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPromocion")
@@ -56,14 +57,13 @@ public class Promocion {
         cine = null;
     }
 
-    public Promocion(Long id, String nombre, String descripcion, Integer stock, LocalDate fechaInicio, LocalDate fechaFin, Cine cine) {
+    public Promocion(Long id, String nombre, String descripcion, Integer stock, LocalDate fechaInicio, LocalDate fechaFin) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.stock = stock;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.cine = cine;
     }
 
     public Cine getCine() {
