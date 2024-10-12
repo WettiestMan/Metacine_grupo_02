@@ -1,5 +1,7 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "idioma")
-public class Idioma {
+public class Idioma implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idIdioma")

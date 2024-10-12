@@ -1,5 +1,7 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "dulceria")
-public class Dulceria {
+public class Dulceria implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idDuleria")
@@ -31,10 +33,9 @@ public class Dulceria {
         cine = null;
     }
 
-    public Dulceria(Long id, String direccion, Cine cine) {
+    public Dulceria(Long id, String direccion) {
         this.id = id;
         this.direccion = direccion;
-        this.cine = cine;
     }
 
     public Cine getCine() {

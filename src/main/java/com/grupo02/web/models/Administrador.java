@@ -1,7 +1,11 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "administrador")
-public class Administrador {
+public class Administrador implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idAdmin")
@@ -22,7 +26,8 @@ public class Administrador {
     @Column(name = "correo")
     private String correo;
 
-    @OneToOne(mappedBy = "administrador")
+    @OneToOne(mappedBy = "administrador", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
     private Cine cine;
 
     public Administrador() {
@@ -32,11 +37,10 @@ public class Administrador {
         cine = null;
     }
 
-    public Administrador(Long id, String nombre, String correo, Cine cine) {
+    public Administrador(Long id, String nombre, String correo) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
-        this.cine = cine;
     }
 
     public Long getId() {

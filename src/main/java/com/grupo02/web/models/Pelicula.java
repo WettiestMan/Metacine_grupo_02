@@ -1,5 +1,6 @@
 package com.grupo02.web.models;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 
 import org.hibernate.annotations.OnDelete;
@@ -19,7 +20,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "pelicula")
-public class Pelicula {
+public class Pelicula implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idPelicula")
@@ -65,14 +66,10 @@ public class Pelicula {
         genero = null;
     }
 
-    public Pelicula(Long id, LocalTime duracion, String descripcion, Idioma idioma, Clasificacion cl, Director dir, Genero gen) {
+    public Pelicula(Long id, LocalTime duracion, String descripcion) {
         this.id = id;
         this.duracion = duracion;
         this.descripcion = descripcion;
-        this.idioma = idioma;
-        this.clasificacion = cl;
-        this.director = dir;
-        this.genero = gen;
     }
 
     public Clasificacion getClasificacion() {
