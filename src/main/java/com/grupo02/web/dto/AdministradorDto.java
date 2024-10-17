@@ -1,9 +1,13 @@
 package com.grupo02.web.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class AdministradorDto {
     private Long id;
     private String nombre;
     private String correo;
+
+    @JsonIgnore
     private CineDto cine;
 
     public AdministradorDto() {

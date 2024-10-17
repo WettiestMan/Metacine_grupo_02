@@ -1,11 +1,17 @@
 package com.grupo02.web.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class CineDto {
     private Long id;
     private String nombre;
     private String direccion;
     private String telefono;
+
+    @JsonIgnore
     private AdministradorDto admin;
+
+    @JsonIgnore
     private DulceriaDto dulceria;
 
 
