@@ -20,7 +20,7 @@ import com.grupo02.web.services.PromocionService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/promociones")
+@RequestMapping("/api/promociones")
 public class PromocionController {
     
     private final PromocionService intf;
@@ -39,7 +39,7 @@ public class PromocionController {
         }
     }
     
-    @GetMapping
+    @GetMapping("porId")
     public ResponseEntity<PromocionDto> obtenerPorId(@RequestParam(name = "id", required = true) Long id) {
         try {
             Optional<PromocionDto> resp = intf.obtenerPorId(id);
@@ -53,7 +53,7 @@ public class PromocionController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porCineId")
     public ResponseEntity<List<PromocionDto>> obtenerPorCineId (@RequestParam(name = "idCine", required = true) Long id) {
         try {
             return ResponseEntity.ok(intf.obtenerPorCineId(id));
@@ -63,7 +63,7 @@ public class PromocionController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porStock")
     public ResponseEntity<List<PromocionDto>> obtenerPorStock (@RequestParam(name = "stock", required = true) Integer stock) {
         try {
             return ResponseEntity.ok(intf.obtenerPorStock(stock));

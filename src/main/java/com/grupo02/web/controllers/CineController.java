@@ -20,7 +20,7 @@ import com.grupo02.web.services.CineService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/cines")
+@RequestMapping("/api/cines")
 public class CineController {
     
     private final CineService intf;
@@ -35,6 +35,7 @@ public class CineController {
             return ResponseEntity.ok(intf.insertar(bean));
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -45,11 +46,12 @@ public class CineController {
             return new ResponseEntity<>(intf.obtenerTodos(), HttpStatus.OK);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @GetMapping
+    @GetMapping("porId")
     public ResponseEntity<CineDto> obtenerPorId(@RequestParam(name = "id", required = true) Long id) {
         try {
             Optional<CineDto> resp = intf.obtenerPorId(id);
@@ -59,11 +61,12 @@ public class CineController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @GetMapping
+    @GetMapping("porAdminId")
     public ResponseEntity<CineDto> obtenerPorAdministradorId(@RequestParam(name = "idAdmin", required = true) Long id) {
         try {
             Optional<CineDto> resp = intf.obtenerPorAdministradorId(id);
@@ -73,6 +76,7 @@ public class CineController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -87,6 +91,7 @@ public class CineController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -100,6 +105,7 @@ public class CineController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

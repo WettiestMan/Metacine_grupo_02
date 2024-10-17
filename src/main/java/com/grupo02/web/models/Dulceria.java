@@ -2,6 +2,8 @@ package com.grupo02.web.models;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.FetchType;
 
 @Entity
 @Table(name = "dulceria")
@@ -23,8 +26,9 @@ public class Dulceria implements Serializable{
     @Column(name = "direccion")
     private String direccion;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "idCine", referencedColumnName = "idCine")
+    @JsonIgnore
     private Cine cine;
 
     public Dulceria() {

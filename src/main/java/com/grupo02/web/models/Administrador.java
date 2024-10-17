@@ -2,6 +2,8 @@ package com.grupo02.web.models;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,8 +28,9 @@ public class Administrador implements Serializable{
     @Column(name = "correo")
     private String correo;
 
-    @OneToOne(mappedBy = "administrador", fetch = FetchType.LAZY,
+    @OneToOne(mappedBy = "admin", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
+    @JsonIgnore
     private Cine cine;
 
     public Administrador() {

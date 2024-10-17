@@ -20,7 +20,7 @@ import com.grupo02.web.dto.PeliculaDto;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/peliculas")
+@RequestMapping("/api/peliculas")
 public class PeliculaController {
 
     private final PeliculaService intf;
@@ -39,7 +39,7 @@ public class PeliculaController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porId")
     public ResponseEntity<PeliculaDto> obtenerPorId (@RequestParam(name = "id", required = true) Long id) {
         try {
             Optional<PeliculaDto> resp = intf.obtenerPorId(id);
@@ -62,7 +62,7 @@ public class PeliculaController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porIdiomaId")
     public ResponseEntity<List<PeliculaDto>> obtenerPorIdiomaId (@RequestParam(name = "idIdioma", required = true) Long id) {
         try {
             return ResponseEntity.ok(intf.obtenerPorIdiomaId(id));
@@ -71,7 +71,7 @@ public class PeliculaController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porClasificacionId")
     public ResponseEntity<List<PeliculaDto>> obtenerPorClasificacionId (@RequestParam(name = "idClasificacion", required = true) Long id) {
         try {
             return ResponseEntity.ok(intf.obtenerPorClasificacionId(id));
@@ -80,7 +80,7 @@ public class PeliculaController {
         }
     }
     
-    @GetMapping
+    @GetMapping("porGeneroId")
     public ResponseEntity<List<PeliculaDto>> obtenerPorGeneroId (@RequestParam(name = "idGenero", required = true) Long id) {
         try {
             return ResponseEntity.ok(intf.obtenerPorGeneroId(id));
@@ -89,7 +89,7 @@ public class PeliculaController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porDirectorId")
     public ResponseEntity<List<PeliculaDto>> obtenerPorDirectorId (@RequestParam(name = "idDirector", required = true) Long id) {
         try {
             return ResponseEntity.ok(intf.obtenerPorDirectorId(id));

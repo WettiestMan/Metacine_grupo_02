@@ -20,7 +20,7 @@ import com.grupo02.web.services.ProductoService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("api/productos")
+@RequestMapping("/api/productos")
 public class ProductoController {
     
     private final ProductoService intf;
@@ -39,7 +39,7 @@ public class ProductoController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porId")
     public ResponseEntity<ProductoDto> obtenerPorId(@RequestParam(name = "id", required = true) Long id) {
         try {
             Optional<ProductoDto> resp = intf.obtenerPorId(id);
@@ -54,7 +54,7 @@ public class ProductoController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porTipoProdId")
     public ResponseEntity<List<ProductoDto>> obtenerPorTipoProductoId(@RequestParam(name = "idTipoProd", required = true) Long id) {
         try {
             return new ResponseEntity<>(intf.obtenerPorTipoProductoId(id), HttpStatus.OK);
@@ -64,7 +64,7 @@ public class ProductoController {
         }
     }
 
-    @GetMapping
+    @GetMapping("porDulceriaId")
     public ResponseEntity<List<ProductoDto>> obtenerPorDulceriaId(@RequestParam(name = "idDulceria", required = true) Long id) {
         try {
             return new ResponseEntity<>(intf.obtenerPorDulceriaId(id), HttpStatus.OK);
