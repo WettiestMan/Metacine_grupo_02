@@ -1,0 +1,122 @@
+:root {
+  --rojo: #DD0426;
+  --negro: #0A0C11;
+  --fondo: #EEF6EE;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+body{
+  font-family: "Albert Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background-color: white;
+}
+
+header .b-usuario {
+  width: 30px;
+}
+
+/* Estilos generales para pantallas grandes */
+.carousel-caption {
+  position: absolute;
+  top: 20px;
+  right: 500px;
+  text-align: right;
+  width: 300px;
+  max-width: none;
+  margin-left: auto;
+}
+
+.carousel-caption h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  text-align: left;
+}
+
+.carousel-caption p {
+  font-family: "Albert Sans", sans-serif;
+  font-size: 18px;
+  color: white;
+  max-width: 400px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.btn-comprar {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--rojo);
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-left: 50%;
+  max-width: 150px;  /* Limitar el ancho máximo del botón */
+}
+
+.btn-comprar:hover {
+  background-color: var(--rojo);
+}
+
+.boleto {
+  width: 24px;
+  height: auto;
+  margin-right: 8px;
+}
+
+
+
+/* Media query para pantallas de 767px o menos */
+@media (max-width: 767px) {
+  .carousel-caption {
+      
+      text-align: right;
+      width: 200px;
+      max-width: none;
+      margin-left: auto;
+      font-weight: 100;
+    font-optical-sizing: auto;
+    
+  }
+
+  .carousel-caption h2 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .carousel-caption p {
+    font-size: 11px;
+    font-family: "Albert Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    max-width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .btn-comprar {
+    max-width: auto;
+  }
+
+.btn-comprar {
+  font-size: 8px;
+}
+  
+  .btn-comprar img {
+    width: 15px;
+  }
+}

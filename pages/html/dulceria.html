@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&family=Montserrat:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,600;1,600&family=Montserrat:ital,wght@0,900;1,900&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>Dulceria</title>
+</head>
+<body>
+    <header>
+      <div class="contenedor">
+        <!-- Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-white bg-transparent">
+          <div class="container">
+            <!--Logo-->
+            <a class="navbar-brand fs-4" href="/html/index.html" style="font-family: 'Zen Dots', serif;">
+              <img
+                src="/Icons/Logo - Cine Lima.svg"
+                alt="logo"
+                width="30"
+                height="30"
+                class="d-inline-block align-text-top"
+              />
+              Metacine
+            </a>
+            <!--Toggle btn-->
+            <button
+              class="navbar-toggler shadow-none border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--SideBar-->
+            <div
+              class="sidebar offcanvas offcanvas-start"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <!--Sidebar Header-->
+              <div class="offcanvas-header text-black border-botton">
+                <img
+                  src="/Icons/Logo - Cine Lima.svg"
+                  alt="logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+                />
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  Metacine
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-black shadow-none"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <!-- Sidebar Body-->
+              <div
+                class="offcanvas-body d-flex flex-column flex-lg-row fs-6 p-4 p-lg-0"
+              >
+                <ul
+                  class="navbar-nav nav-underline justify-content-center align-items-center flex-grow-1 pe-3"
+                >
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" aria-current="page" href="/html/index.html"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#peliculas">Peliculas</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#promociones">Promociones</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link active" href="/html/dulceria.html">Dulceria</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#cines">Cines</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#sobre_nosotros"
+                      >Sobre Nosotros</a
+                    >
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#usuario">
+                      <img
+                        src="/Icons/usuario.png"
+                        alt="Boton Usuario"
+                        class="b-usuario"
+                        style="width: 30px;"
+                      />
+                    </a>
+                  </li>
+                </ul>
+                <!--Login / Sign up-->
+                <div
+                  class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2"
+                >
+                  <a href="/html/login.html" class="text-black">Login</a>
+                  <a
+                    href="/html/register.html"
+                    class="text-white text-decoration-none px-1 py-1 rounded-3"
+                    style="background-color: #DD0426; font-size: 100%;"
+                    >Sign up</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container py-5">
+                <div class="col-2 mt-5" style="color: #DD0426; text-shadow: 5px -0 #0A0C11;font-size: 55px;font-family: 'Montserrat', serif;font-optical-sizing: auto;font-weight: 900;">
+                  Dulcería
+                </div>
+          <div class="col-12 ">
+              <div class="bg-white">
+                <ul class="nav nav-tabs justify-content-left">
+                 <li class="nav-item">
+                   <a class="nav-link active" data-bs-toggle="tab" href="#all">Todos los Productos</a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" data-bs-toggle="tab" href="#palomitas">Palomitas</a>
+                 </li>
+                 <li class="nav-item" >
+                   <a class="nav-link" data-bs-toggle="tab" href="#combos">Combos</a>
+                 </li>
+               </ul>
+               <div class="row">
+                <div class="col-12">
+                  <div class="tab-content p-4 ">
+                    <div id="all" class="tab-pane fade in active show">
+                      <div class="row">
+                        <!-- Primera tarjeta -->
+                        <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                          <div class="card">
+                            <img src="/Images/palomitas.jpg" alt="">
+                            <div class="card-body">
+                              <h3 class="card-title">Product name</h3>
+                              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                              <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                <span class="count">0</span>
+                                <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              
+                        <!-- Segunda tarjeta -->
+                        <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                          <div class="card">
+                            <img src="/Images/palomitas.jpg" alt="">
+                            <div class="card-body">
+                              <h3 class="card-title">Product name</h3>
+                              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                              <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                <span class="count">0</span>
+                                <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                            <div class="card">
+                              <img src="/Images/combo clasico.jpg" alt="">
+                              <div class="card-body">
+                                <h3 class="card-title">Product name</h3>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                    <span class="count">0</span>
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                            <div class="card">
+                              <img src="/Images/combo clasico.jpg" alt="">
+                              <div class="card-body">
+                                <h3 class="card-title">Product name</h3>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                    <span class="count">0</span>
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                         </div>
+                      </div>
+                       <div id="palomitas" class="tab-pane fade ">
+                         <div class="row">
+                          <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                            <div class="card">
+                              <img src="/Images/palomitas.jpg" alt="">
+                              <div class="card-body">
+                                <h3 class="card-title">Product name</h3>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                    <span class="count">0</span>
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                            <div class="card">
+                              <img src="/Images/palomitas.jpg" alt="">
+                              <div class="card-body">
+                                <h3 class="card-title">Product name</h3>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                    <span class="count">0</span>
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                         
+                         </div>
+                      </div>
+                       <div id="combos" class="tab-pane fade">
+                         <div class="row">
+                          <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                            <div class="card">
+                              <img src="/Images/combo clasico.jpg" alt="">
+                              <div class="card-body">
+                                <h3 class="card-title">Product name</h3>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                    <span class="count">0</span>
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-10 my-4">
+                            <div class="card">
+                              <img src="/Images/combo clasico.jpg" alt="">
+                              <div class="card-body">
+                                <h3 class="card-title">Product name</h3>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus, autem?</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="increment(this)">+</button>
+                                    <span class="count">0</span>
+                                    <button class="btn btn-outline text-white" style="background-color: #DD0426;" onclick="decrement(this)">-</button>
+                                  </div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+<script>
+            // Función para incrementar el contador
+function increment(button) {
+  let counter = button.nextElementSibling; // Selecciona el span que contiene el contador
+  let currentCount = parseInt(counter.textContent); // Obtén el valor actual del contador
+  counter.textContent = currentCount + 1; // Incrementa el valor
+}
+
+// Función para decrementar el contador
+function decrement(button) {
+  let counter = button.previousElementSibling; // Selecciona el span que contiene el contador
+  let currentCount = parseInt(counter.textContent); // Obtén el valor actual del contador
+  if (currentCount > 0) { // Evitar que el contador sea negativo
+    counter.textContent = currentCount - 1; // Decrementa el valor
+  }
+}
+</script>
+
+
+
+    <!--Script-->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans&family=Montserrat:wght@300&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,600;1,600&family=Montserrat:ital,wght@0,900;1,900&family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>MetaCine</title>
+  </head>
+  <body>
+    <header>
+      <div class="contenedor">
+        <!-- Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-white bg-transparent">
+          <div class="container">
+            <!--Logo-->
+            <a class="navbar-brand fs-4" href="/html/index.html" style="font-family: 'Zen Dots', serif;">
+              <img
+                src="/Icons/Logo - Cine Lima.svg"
+                alt="logo"
+                width="30"
+                height="30"
+                class="d-inline-block align-text-top"
+              />
+              Metacine
+            </a>
+            <!--Toggle btn-->
+            <button
+              class="navbar-toggler shadow-none border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--SideBar-->
+            <div
+              class="sidebar offcanvas offcanvas-start"
+              tabindex="-1"
+              id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel"
+            >
+              <!--Sidebar Header-->
+              <div class="offcanvas-header text-black border-botton">
+                <img
+                  src="/Icons/Logo - Cine Lima.svg"
+                  alt="logo"
+                  width="30"
+                  height="30"
+                  class="d-inline-block align-text-top"
+                />
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  Metacine
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-black shadow-none"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <!-- Sidebar Body-->
+              <div
+                class="offcanvas-body d-flex flex-column flex-lg-row fs-6 p-4 p-lg-0"
+              >
+                <ul
+                  class="navbar-nav nav-underline justify-content-center align-items-center flex-grow-1 pe-3"
+                >
+                  <li class="nav-item mx-2">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Inicio</a
+                    >
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#peliculas">Peliculas</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#promociones">Promociones</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="/html/dulceria.html">Dulceria</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#cines">Cines</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#sobre_nosotros"
+                      >Sobre Nosotros</a
+                    >
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#usuario">
+                      <img
+                        src="/Icons/usuario.png"
+                        alt="Boton Usuario"
+                        class="b-usuario"
+                      />
+                    </a>
+                  </li>
+                </ul>
+                <!--Login / Sign up-->
+                <div
+                  class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2"
+                >
+                  <a href="/html/login.html" class="text-black">Login</a>
+                  <a
+                    href="/html/register.html"
+                    class="text-white text-decoration-none px-1 py-1 rounded-3"
+                    style="background-color: var(--rojo); font-size: 100%;"
+                    >Sign up</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/Images/banner1-Inicio.jpg"
+              class="d-block w-100"
+              alt="banner1"
+            />
+            <div class="carousel-caption d-md-block">
+              <h2>Siempre Juntos</h2>
+              <p>
+                Max Bernal, un comediante con aspiraciones frustradas, enfrenta
+                el desafío de criar a su hijo autista.
+              </p>
+              <a href="#" class="btn-comprar">
+                <img
+                  src="/Icons/Ticketera.png"
+                  alt="Icono boleto"
+                  class="boleto"
+                />
+                Comprar
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/Images/banner1-Inicio.jpg"
+              class="d-block w-100"
+              alt="banner2"
+            />
+            <div class="carousel-caption d-md-block">
+              <h2>Siempre Juntos</h2>
+              <p>
+                Max Bernal, un comediante con aspiraciones frustradas, enfrenta
+                el desafío de criar a su hijo autista.
+              </p>
+              <a href="#" class="btn-comprar">
+                <img
+                  src="/Icons/Ticketera.png"
+                  alt="Icono boleto"
+                  class="boleto"
+                />
+                Comprar
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/Images/banner1-Inicio.jpg"
+              class="d-block w-100"
+              alt="banner3"
+            />
+            <div class="carousel-caption d-md-block">
+              <h2>Siempre Juntos</h2>
+              <p>
+                Max Bernal, un comediante con aspiraciones frustradas, enfrenta
+                el desafío de criar a su hijo autista.
+              </p>
+              <a href="#" class="btn-comprar">
+                <img
+                  src="/Icons/Ticketera.png"
+                  alt="Icono boleto"
+                  class="boleto"
+                />
+                Comprar
+              </a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/Images/banner1-Inicio.jpg"
+              class="d-block w-100"
+              alt="banner4"
+            />
+            <div class="carousel-caption d-md-block">
+              <h2>Siempre Juntos</h2>
+              <p>
+                Max Bernal, un comediante con aspiraciones frustradas, enfrenta
+                el desafío de criar a su hijo autista.
+              </p>
+              <a href="#" class="btn-comprar">
+                <img
+                  src="/Icons/Ticketera.png"
+                  alt="Icono boleto"
+                  class="boleto"
+                />
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </main>
+    <div class="container">
+      <!-- Images Filter Buttons Section -->
+      <div class="row">
+        <div class="col-2 mt-5" style="color: #DD0426; text-shadow: 5px -0 #0A0C11;font-size: 55px;font-family: 'Montserrat', serif;font-optical-sizing: auto;font-weight: 900;">
+          Películas
+        </div>
+      </div>
+      <!-- Botón de Filtrar -->
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn" style="background-color: #DD0426;color: white;" id="filter-button">Filtrar</button>
+</div>
+
+<!-- Selectores de filtros -->
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <!-- Ciudad -->
+  <select class="form-select" id="filter-city" aria-label="Default select example">
+    <option value="" selected>Ciudad</option>
+    <option value="San Juan de Miraflores">San Juan de Miraflores</option>
+    <option value="Chorrillos">Chorrillos</option>
+    <option value="La Molina">La Molina</option>
+  </select>
+  
+  <!-- Cine -->
+  <select class="form-select" id="filter-cinema" aria-label="Default select example">
+    <option value="" selected>Cine</option>
+    <option value="Mall del Sur">Mall del Sur</option>
+    <option value="Open Plaza">Open Plaza</option>
+    <option value="Jockey Plaza">Jockey Plaza</option>
+  </select>
+
+  <!-- Día -->
+  <select class="form-select" id="filter-day" aria-label="Default select example">
+    <option value="" selected>Dia</option>
+    <option value="Hoy">Hoy</option>
+    <option value="Mañana">Mañana</option>
+    <option value="Pasado Mañana">Pasado Mañana</option>
+  </select>
+
+  <!-- Género -->
+  <select class="form-select" id="filter-genre" aria-label="Default select example">
+    <option value="" selected>Genero</option>
+    <option value="Animado">Animado</option>
+    <option value="Accion">Accion</option>
+    <option value="Terror">Terror</option>
+  </select>
+</div>
+
+<!-- Sección de imágenes (tarjetas) filtrables -->
+<div class="row row-cols-1 row-cols-md-3 g-3 mt-4 gy-3"  id="filterable-cards">
+  <div class="col-md-4">
+    <div class="card h=100" data-city="San Juan de Miraflores" data-cinema="Mall del Sur" data-day="Hoy" data-genre="Animado">
+      <img src="/images/Robot Salvaje.jpg" alt="img" class="card-img-top" />
+      <div class="card-body">
+        <h6 class="card-title">Robot Salvaje</h6>
+        <p class="card-text text-truncate">After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.</p>
+        <a href="#" class="btn" style="background-color: #DD0426; color: white;">Comprar</a>
+      </div>
+    </div>
+  </div>
+    
+    <div class="col-md-4">
+      <div class="card h=100" data-city="San Juan de Miraflores" data-cinema="Mall del Sur" data-day="Hoy" data-genre="Accion">
+        <img src="/images/La forja.jpeg" alt="img" class="card-img-top" />
+        <div class="card-body">
+          <h6 class="card-title">La forja</h6>
+          <p class="card-text text-truncate">19 year old Isaiah Wright lives for basketball and video games. A year out of high school, he has no job, no plans, and no idea how to be a man. At odds with his single mother Cynthia, Isaiah is given an ultimatum – to step up or move out.</p>
+          <a href="#" class="btn" style="background-color: #DD0426; color: white;">Comprar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h=100" data-city="San Juan de Miraflores" data-cinema="Open Plaza" data-day="Mañana" data-genre="Terror">
+        <img src="/images/Deepweb-ShowMortal.jpeg" alt="img" class="card-img-top" />
+        <div class="card-body">
+          <h6 class="card-title">Deepweb-ShowMortal</h6>
+          <p class="card-text text-truncate">A podcaster’s investigation of his sister’s death leads him to a grisly website, where the highest bidder decides how a chosen victim will be killed.</p>
+          <a href="#" class="btn" style="background-color: #DD0426; color: white;">Comprar</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h=100" data-city="San Juan de Miraflores" data-cinema="Open Plaza" data-day="Mañana" data-genre="Accion">
+        <img src="/images/Deadpool y Wolverine.jpeg" alt="img" class="card-img-top" />
+        <div class="card-body">
+          <h6 class="card-title">Deadpool y Wolverine</h6>
+          <p class="card-text text-truncate">A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.</p>
+          <a href="#" class="btn" style="background-color: #DD0426; color: white;">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+// Filtro de películas
+document.getElementById('filter-button').addEventListener('click', function() {
+  // Obtener los valores seleccionados de los filtros
+  const selectedCity = document.getElementById('filter-city').value;
+  const selectedCinema = document.getElementById('filter-cinema').value;
+  const selectedDay = document.getElementById('filter-day').value;
+  const selectedGenre = document.getElementById('filter-genre').value;
+
+  // Obtener todas las tarjetas
+  const cards = document.querySelectorAll('#filterable-cards .card');
+
+  let filteredCards = 0;
+
+  // Filtrar tarjetas
+  cards.forEach(function(card) {
+    const cardCity = card.getAttribute('data-city');
+    const cardCinema = card.getAttribute('data-cinema');
+    const cardDay = card.getAttribute('data-day');
+    const cardGenre = card.getAttribute('data-genre');
+
+    // Comprobar si la tarjeta coincide con los filtros seleccionados
+    if ((selectedCity === "" || cardCity === selectedCity) &&
+        (selectedCinema === "" || cardCinema === selectedCinema) &&
+        (selectedDay === "" || cardDay === selectedDay) &&
+        (selectedGenre === "" || cardGenre === selectedGenre)) {
+          card.parentElement.style.display = "block"; // Mostrar tarjeta si coincide
+      filteredCards++; // Incrementar el conteo de tarjetas filtradas
+    } else {
+      card.parentElement.style.display = "none"; // Ocultar tarjeta si no coincide
+    }
+  });
+
+  // Si no hay tarjetas filtradas, puedes mostrar un mensaje aquí, si lo deseas
+  if (filteredCards === 0) {
+    console.log('No se encontraron películas con los filtros seleccionados.');
+  }
+});
+</script>
+
+    <!-- Script -->
+    <script src="/javascript/script.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
