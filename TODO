@@ -1,0 +1,5 @@
+# Lo que falta
+
+* En la backend falta representar algunas tablas, solo estoy serializando ciertas clases por tema de tiempo.
+* No todas las clases serializadas tienen sus controladores y servicios implementados, solo estoy implementando  
+los que aparecen en el diagrama de clase.
