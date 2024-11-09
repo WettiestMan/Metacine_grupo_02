@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.grupo02.web.dto.TipoProductoDto;
 
 public interface TipoProductoService {
-    Optional<TipoProductoDto> insertar(TipoProductoDto newBean);
+    TipoProductoDto insertar(TipoProductoDto newBean);
 
     Optional<TipoProductoDto> obtenerPorId(Long id);
 

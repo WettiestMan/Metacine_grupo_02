@@ -6,31 +6,31 @@ import java.util.Optional;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.grupo02.web.services.PeliculaService;
-import com.grupo02.web.dto.PeliculaDto;
+import com.grupo02.web.dto.DirectorDto;
+import com.grupo02.web.services.DirectorService;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/api/peliculas")
-public class PeliculaController {
+@RequestMapping("/api/directores")
+public class DirectorController {
+    
+    private final DirectorService intf;
 
-    private final PeliculaService intf;
-
-    public PeliculaController(PeliculaService intf) {
+    public DirectorController(DirectorService intf) {
         this.intf = intf;
     }
 
     @PostMapping
-    public ResponseEntity<PeliculaDto> registrarPelicula(@RequestBody PeliculaDto bean) {
+    public ResponseEntity<DirectorDto> registrarPelicula(@RequestBody DirectorDto bean) {
         try {
             return ResponseEntity.ok(intf.insertar(bean));
         }
@@ -40,9 +40,9 @@ public class PeliculaController {
     }
 
     @GetMapping("porId")
-    public ResponseEntity<PeliculaDto> obtenerPorId (@RequestParam(name = "id", required = true) Long id) {
+    public ResponseEntity<DirectorDto> obtenerPorId (@RequestParam(name = "id", required = true) Long id) {
         try {
-            Optional<PeliculaDto> resp = intf.obtenerPorId(id);
+            Optional<DirectorDto> resp = intf.obtenerPorId(id);
             if (resp.isPresent()) {
                 return ResponseEntity.ok(resp.get());
             }
@@ -53,7 +53,7 @@ public class PeliculaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PeliculaDto>> obtenerTodos() {
+    public ResponseEntity<List<DirectorDto>> obtenerTodos() {
         try {
             return ResponseEntity.ok(intf.obtenerTodos());
         }
@@ -62,67 +62,56 @@ public class PeliculaController {
         }
     }
 
-    @GetMapping("porNombre")
-    public ResponseEntity<List<PeliculaDto>> getMethodName(@RequestParam(name = "nombre", required = true) String nombre) {
+    @GetMapping("porDirectorNombre")
+    public ResponseEntity<List<DirectorDto>> obtenerPorNombre (@RequestParam(name = "nombre", required = true) String nombre) {
         try {
             return ResponseEntity.ok(intf.obtenerPorNombre(nombre));
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @GetMapping("porIdiomaId")
-    public ResponseEntity<List<PeliculaDto>> obtenerPorIdiomaId (@RequestParam(name = "idIdioma", required = true) Long id) {
+    @GetMapping("porDirectorApellido")
+    public ResponseEntity<List<DirectorDto>> obtenerPorApellido (@RequestParam(name = "apellido", required = true) String apellido) {
         try {
-            return ResponseEntity.ok(intf.obtenerPorIdiomaId(id));
-        } catch (Exception e) {
+            return ResponseEntity.ok(intf.obtenerPorApellido(apellido));
+        }
+        catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
-    @GetMapping("porClasificacionId")
-    public ResponseEntity<List<PeliculaDto>> obtenerPorClasificacionId (@RequestParam(name = "idClasificacion", required = true) Long id) {
+    @GetMapping("porDirectorNombreApellido")
+    public ResponseEntity<List<DirectorDto>> obtenerPorNombreYApellido (
+        @RequestParam(name = "nombre", required = true) String nombre,
+        @RequestParam(name = "apellido", required = true) String apellido
+    ) {
         try {
-            return ResponseEntity.ok(intf.obtenerPorClasificacionId(id));
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.ok(intf.obtenerPorNombreYApellido(nombre, apellido));
         }
-    }
-    
-    @GetMapping("porGeneroId")
-    public ResponseEntity<List<PeliculaDto>> obtenerPorGeneroId (@RequestParam(name = "idGenero", required = true) Long id) {
-        try {
-            return ResponseEntity.ok(intf.obtenerPorGeneroId(id));
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping("porDirectorId")
-    public ResponseEntity<List<PeliculaDto>> obtenerPorDirectorId (@RequestParam(name = "idDirector", required = true) Long id) {
-        try {
-            return ResponseEntity.ok(intf.obtenerPorDirectorId(id));
-        } catch (Exception e) {
+        catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PutMapping
-    public ResponseEntity<PeliculaDto> actualizarPelicula (@RequestBody PeliculaDto bean) {
+    public ResponseEntity<DirectorDto> actualizarClasificacion(@RequestBody DirectorDto bean) {
         try {
-            Optional<PeliculaDto> resp = intf.actualizar(bean.getId(), bean);
+            Optional<DirectorDto> resp = intf.actualizar(bean.getId(), bean);
             if (resp.isPresent()) {
                 return ResponseEntity.ok(resp.get());
             }
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @DeleteMapping
-    public ResponseEntity<PeliculaDto> eliminarCine(@RequestBody Long id) {
+    public ResponseEntity<DirectorDto> eliminarClasificacion(@RequestBody Long id) {
         try {
             if (intf.eliminar(id)) {
                 return new ResponseEntity<>(HttpStatus.OK);
@@ -130,6 +119,7 @@ public class PeliculaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         catch (Exception ex) {
+            ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

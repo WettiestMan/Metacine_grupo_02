@@ -9,6 +9,12 @@ import com.grupo02.web.models.Pelicula;
 
 public interface PeliculaRepository extends JpaRepository<Pelicula, Long>{
     @Query(
+        value = "SELECT * FROM Pelicula p WHERE p.nombre = ?",
+        nativeQuery = true
+    )
+    List<Pelicula> findByNombre(String nombre);
+
+    @Query(
         value = "SELECT * FROM Pelicula p WHERE p.idGenero = ?",
         nativeQuery = true
     )

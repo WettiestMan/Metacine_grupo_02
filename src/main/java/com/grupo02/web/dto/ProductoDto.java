@@ -1,5 +1,7 @@
 package com.grupo02.web.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class ProductoDto {
     private Long id;
     private String nombre;
@@ -7,6 +9,8 @@ public class ProductoDto {
     private String descripcion;
     private Integer stock;
     private TipoProductoDto tipoProd;
+
+    @JsonIgnore
     private DulceriaDto dulceria;
 
     public ProductoDto() {

@@ -50,6 +50,13 @@ public class PeliculaServiceImpl implements PeliculaService {
     }
 
     @Override
+    public List<PeliculaDto> obtenerPorNombre(String nombre) {
+        return actor.findByNombre(nombre).stream()
+                    .map(PeliculaMapper::toDto)
+                    .collect(Collectors.toList());
+    }
+
+    @Override
     public List<PeliculaDto> obtenerPorClasificacionId(Long id) {
         return actor.findByClasificacionId(id).stream()
                     .map(PeliculaMapper::toDto)

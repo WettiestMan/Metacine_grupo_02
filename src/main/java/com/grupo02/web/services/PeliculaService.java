@@ -14,6 +14,8 @@ public interface PeliculaService {
 
     List<PeliculaDto> obtenerPorIdiomaId(Long id);
 
+    List<PeliculaDto> obtenerPorNombre(String nombre);
+
     List<PeliculaDto> obtenerPorClasificacionId(Long id);
 
     List<PeliculaDto> obtenerPorGeneroId(Long id);

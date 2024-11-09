@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.grupo02.web.dto.IdiomaDto;
 
 public interface IdiomaService {
-    Optional<IdiomaDto> insertar(IdiomaDto newBean);
+    IdiomaDto insertar(IdiomaDto newBean);
 
     Optional<IdiomaDto> obtenerPorId(Long id);
 

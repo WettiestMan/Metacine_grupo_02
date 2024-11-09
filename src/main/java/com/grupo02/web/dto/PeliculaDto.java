@@ -4,6 +4,7 @@ import java.time.LocalTime;
 
 public class PeliculaDto {
     private Long id;
+    private String nombre;
     private LocalTime duracion;
     private String descripcion;
     private IdiomaDto idioma;
@@ -14,8 +15,9 @@ public class PeliculaDto {
     public PeliculaDto() {
     }
 
-    public PeliculaDto(Long id, LocalTime duracion, String descripcion, IdiomaDto idioma, ClasificacionDto clasificacion, DirectorDto director, GeneroDto genero) {
+    public PeliculaDto(Long id, String nombre, LocalTime duracion, String descripcion, IdiomaDto idioma, ClasificacionDto clasificacion, DirectorDto director, GeneroDto genero) {
         this.id = id;
+        this.nombre = nombre;
         this.duracion = duracion;
         this.descripcion = descripcion;
         this.idioma = idioma;
@@ -30,6 +32,14 @@ public class PeliculaDto {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public LocalTime getDuracion() {

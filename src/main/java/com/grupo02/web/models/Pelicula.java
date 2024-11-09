@@ -26,6 +26,9 @@ public class Pelicula implements Serializable{
     @Column(name = "idPelicula")
     private Long id;
 
+    @Column(name = "nombre")
+    private String nombre;
+
     @Column(name = "duration")
     private LocalTime duracion;
 
@@ -58,6 +61,7 @@ public class Pelicula implements Serializable{
 
     public Pelicula() {
         id = null;
+        nombre = null;
         duracion = null;
         descripcion = null;
         idioma = null;
@@ -66,8 +70,9 @@ public class Pelicula implements Serializable{
         genero = null;
     }
 
-    public Pelicula(Long id, LocalTime duracion, String descripcion) {
+    public Pelicula(Long id, String nombre, LocalTime duracion, String descripcion) {
         this.id = id;
+        this.nombre = nombre;
         this.duracion = duracion;
         this.descripcion = descripcion;
     }
@@ -100,6 +105,10 @@ public class Pelicula implements Serializable{
         return idioma;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setClasificacion(Clasificacion clasificacion) {
         this.clasificacion = clasificacion;
     }
@@ -126,5 +135,9 @@ public class Pelicula implements Serializable{
 
     public void setIdioma(Idioma idioma) {
         this.idioma = idioma;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }

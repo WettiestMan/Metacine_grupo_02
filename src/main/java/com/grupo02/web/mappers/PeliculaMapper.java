@@ -7,6 +7,7 @@ public class PeliculaMapper {
     public static PeliculaDto toDto(Pelicula bean) {
         return new PeliculaDto(
             bean.getId(),
+            bean.getNombre(),
             bean.getDuracion(),
             bean.getDescripcion(),
             IdiomaMapper.toDto(bean.getIdioma()),
@@ -19,6 +20,7 @@ public class PeliculaMapper {
     public static Pelicula toModel(PeliculaDto bean) {
         var ret = new Pelicula(
             bean.getId(),
+            bean.getNombre(),
             bean.getDuracion(),
             bean.getDescripcion()
         );
